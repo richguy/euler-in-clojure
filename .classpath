@@ -28,5 +28,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="classes"/>
+	<classpathentry kind="lib" path="clojure.jar" sourcepath="clojure-src.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
