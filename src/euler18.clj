@@ -1,7 +1,19 @@
 (ns euler18)
+(import '(java.io BufferedReader StringReader))
 
-(def x "
-75
+
+
+(defn max-sum-path
+  [x]
+  (letfn 
+    [(char2ints [v] (into [] (map #(Integer/parseInt (str %)) v)))
+    (parse [s] (clojure.string/split s #"\s"))
+    (lines [s] (line-seq (BufferedReader. (StringReader. s))))
+    (zip-rows [a b] (map + (map #(apply max %) (partition 2 1 a)) b))]
+
+    (reduce zip-rows (reverse (map #(char2ints (parse %)) (lines x))))))
+
+#_(def x "75
 95 64
 17 47 82
 18 35 87 10
@@ -16,3 +28,10 @@
 91 71 52 38 17 14 91 43 58 50 27 29 48
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23")
+
+
+(def x (slurp "/Users/rich/dev/euler-in-clojure/src/triangle.txt"))
+(max-sum-path x)
+
+
+

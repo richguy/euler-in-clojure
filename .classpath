@@ -24,10 +24,8 @@
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="ccw.LEININGEN_CONTAINER">
 		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="testlein/target/native/macosx/x86_64"/>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="euler-in-clojure/target/native/macosx/x86_64"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="classes"/>
-	<classpathentry kind="lib" path="clojure.jar" sourcepath="clojure-src.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
