@@ -1,4 +1,4 @@
-(ns all-euler
+(ns all-euler-1-20
   (:require [clojure.math.numeric-tower :as math]
             [clojure.pprint])
   (:use [clojure.string :only (join split)])
@@ -408,3 +408,21 @@
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23")
 
 #_(max-sum-path (slurp "/Users/rich/dev/euler-in-clojure/src/triangle.txt"))
+
+;euler19 TODO
+
+;euler20 ONE LINER!
+(defn euler20 [] (reduce + (map #(Integer/parseInt (str %))(seq (str (factorial 100))))))
+
+;euler21
+(defn sum-prop-div [n] 
+  (reduce + (filter #(= 0 (mod n %)) (range 1 (+ 1(quot n 2))))))
+
+(defn amicable? [n]
+  (and (= n (sum-prop-div (sum-prop-div n)))
+       (not= n (sum-prop-div n))))
+
+(defn euler21 [r]
+  (reduce + (filter #(amicable? %) (range 1 r))))
+
+  
